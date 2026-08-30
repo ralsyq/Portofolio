@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
+import { AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { navItems } from '@/data/nav';
@@ -35,13 +35,13 @@ export function Navbar() {
 
   return (
     <>
-      <header ref={headerRef} className="fixed top-0 left-0 z-50 w-full">
+      <header ref={headerRef} className="fixed top-3 sm:top-5 left-0 z-50 w-full">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
           <button
             onClick={() => goTo('hero')}
-            className="rounded-full border border-dotted border-border bg-background/80 px-3.5 py-1.5 text-sm font-bold tracking-widest text-foreground uppercase shadow-sm backdrop-blur-md"
+            className="rounded-full border border-dotted border-border bg-background/80 px-3.5 py-1.5 text-sm tracking-widest text-foreground shadow-sm backdrop-blur-md"
           >
-            Ferion
+            Raisya's Portofolio
           </button>
 
           <nav className="hidden items-center gap-2 lg:flex">
@@ -50,10 +50,10 @@ export function Navbar() {
                 key={item.id}
                 onClick={() => goTo(item.id)}
                 className={cn(
-                  'rounded-full border px-3.5 py-1.5 text-sm font-medium transition-colors',
+                  'rounded-full border px-3.5 py-1.5 text-sm font-medium transition-all cursor-pointer',
                   active === item.id
-                    ? 'border-foreground bg-foreground text-background'
-                    : 'border-dotted border-border bg-background/80 text-muted-foreground backdrop-blur-md hover:border-foreground hover:text-foreground'
+                    ? 'border-foreground bg-foreground text-background shadow-sm'
+                    : 'border-dotted border-border bg-background/90 text-foreground/80 backdrop-blur-md hover:border-foreground hover:bg-foreground hover:text-background'
                 )}
               >
                 {item.label}
@@ -115,8 +115,8 @@ export function Navbar() {
                         className={cn(
                           'rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
                           active === item.id
-                            ? 'bg-muted text-foreground'
-                            : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                            ? 'bg-foreground text-background font-semibold'
+                            : 'text-foreground hover:bg-foreground hover:text-background'
                         )}
                       >
                         {item.label}

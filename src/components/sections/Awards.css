@@ -5,7 +5,7 @@
 
 .awards-panel {
   position: relative;
-  font-family: 'bord', serif;
+  font-family: var(--font-sans);
   overflow: hidden;
 }
 
@@ -44,11 +44,11 @@
 }
 
 .award-case-title {
-  font-family: 'nanu', sans-serif;
+  font-family: var(--font-sans);
 }
 
 .award-case-desc {
-  font-family: 'nanu', sans-serif;
+  font-family: var(--font-sans);
 }
 
 .award-case-photo {

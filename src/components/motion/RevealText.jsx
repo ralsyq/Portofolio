@@ -1,3 +1,5 @@
-export function RevealText({ text, as: Tag = 'span', className }) {
-  return <Tag className={className}>{text}</Tag>;
+import { createElement } from 'react';
+
+export function RevealText({ text, as = 'span', className }) {
+  return createElement(as, { className }, text);
 }

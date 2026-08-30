@@ -1,15 +1,15 @@
-import mcpIsDeadImage from '../assets/mcp-is-dead.webp';
+import panduGiziLogo from '../assets/pandugizi-logo.png';
 
 export const blogPosts = [
   {
-    id: 'post-1',
-    title: 'MCP is Dead',
+    id: 'pandugizi',
+    title: 'Building PanduGizi: Why We Shouldn’t Trust LLMs with Clinical Decisions (And What I Did Instead)',
     summary:
-      'MCP was marketed as infrastructure. The "USB-C for AI." Something that would just exist in the background.',
-    label: 'Claude Code',
-    author: 'Ujjwal Kumar Rai',
-    published: 'Jun 2026',
-    url: 'https://medium.com/@ujjwal_kumar_rai/mcp-is-dead-30e1045e5916',
-    image: mcpIsDeadImage,
+      'How combining a deterministic rule engine, Google Gemini, and human-in-the-loop approval creates a safe AI system for maternal and child health monitoring.',
+    label: 'AI & HealthTech',
+    author: 'Raisya Putri',
+    published: 'Aug 2026',
+    url: 'https://medium.com/@putriraisya0829/e5c63886891e',
+    image: panduGiziLogo,
   },
 ];

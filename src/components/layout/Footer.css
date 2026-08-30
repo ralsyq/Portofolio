@@ -4,35 +4,26 @@
 .footer-panel {
   position: relative;
   overflow: hidden;
-  margin: 0 0.25rem 0.25rem;
-  border-radius: 30px;
-  border: 1px dotted oklch(0.1 0 0);
-  background: oklch(0.97 0 0);
-  color: oklch(0.1 0 0);
+  background: var(--background);
+  color: var(--foreground);
   text-align: center;
-  padding: 4rem 1.5rem 3rem;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-.footer-panel:hover {
-  background: oklch(0.06 0 0);
-  color: oklch(0.97 0 0);
-  border-color: oklch(0.97 0 0);
+  padding: 5rem 1.5rem 3.5rem;
 }
 
 .footer-tagline {
-  font-family: 'nanu', sans-serif;
+  font-family: var(--font-sans);
   font-size: clamp(0.85rem, 1.2vw, 1rem);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .footer-headline {
   display: inline-block;
   position: relative;
-  font-family: 'bord', serif;
+  font-family: var(--font-glory, 'Give You Glory', cursive);
   font-size: clamp(2.75rem, 10vw, 7rem);
   line-height: 1;
   margin-top: 1rem;
-  color: currentColor;
+  color: var(--foreground);
   text-decoration: none;
 }
 .footer-headline::after {
@@ -43,7 +34,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: currentColor;
+  background-color: var(--foreground);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -61,22 +52,24 @@
 }
 
 .footer-follow-link {
-  font-family: 'nanu', sans-serif;
-  color: currentColor;
-  border: 1px dotted currentColor;
+  font-family: var(--font-sans);
+  color: var(--foreground);
+  border: 1px dotted var(--border);
   border-radius: 9999px;
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 .footer-follow-link:hover {
-  opacity: 0.7;
+  background-color: var(--foreground);
+  color: var(--background);
+  border-color: var(--foreground);
 }
 
 .footer-credit {
   margin-top: 2.5rem;
-  font-family: 'nanu', sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.75rem;
   opacity: 0.6;
 }

@@ -1,7 +1,6 @@
 import { profile } from '@/data/profile';
 import { useClickSound } from '@/hooks/useClickSound';
 import { scrollToSection } from '@/lib/utils';
-import bgVideo from '@/assets/bg.mp4';
 import './Hero.css';
 
 export function Hero() {
@@ -10,12 +9,13 @@ export function Hero() {
   const date = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`;
 
   return (
-    <section id="hero" className="hero-panel mx-1 mt-1 sm:mx-2">
-      <video className="hero-video" loop muted autoPlay playsInline preload="auto" fetchPriority="high">
-        <source src={bgVideo} type="video/mp4" />
-      </video>
+    <section id="hero" className="hero-panel w-full">
+      <span className="ghost-word" aria-hidden>
+        Raisya
+      </span>
+      <div className="ghost-ring" aria-hidden />
 
-      <h1 className="hero-heading">All I know is I've never been bored.</h1>
+      <h1 className="hero-heading">All I know is my interest has never warned.</h1>
 
       <div className="hero-actions">
         <button

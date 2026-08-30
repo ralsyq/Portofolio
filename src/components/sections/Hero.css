@@ -1,14 +1,12 @@
-/* Ported from the Home/home.css reference panel: a rounded, full-bleed
-   black card with giant "bord" display type and dotted "nanu" pill CTAs. */
+/* Clean white hero panel matching full white theme */
 
 .hero-panel {
-  font-family: 'bord', serif;
   position: relative;
   overflow: hidden;
-  border-radius: 30px;
-  background: oklch(0.08 0 0);
-  color: oklch(0.98 0 0);
-  min-height: 92vh;
+  border-radius: 0;
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,23 +15,15 @@
   padding: 6rem 1.5rem;
 }
 
-.hero-video {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .hero-heading {
+  font-family: var(--font-glory, 'Give You Glory', cursive);
   position: relative;
   z-index: 1;
   max-width: 20ch;
-  font-size: clamp(2.25rem, 6vw, 5.5rem);
-  line-height: 1.05;
+  font-size: clamp(2.5rem, 6.5vw, 5.75rem);
+  line-height: 1.08;
   margin: 0;
-  text-shadow: 0 2px 24px oklch(0 0 0 / 60%);
+  color: var(--foreground);
 }
 
 .hero-actions {
@@ -43,43 +33,47 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   justify-content: center;
-  margin-top: 2.25rem;
+  margin-top: 2.5rem;
 }
 
 .hero-pill {
-  font-family: 'nanu', sans-serif;
-  border: 2px dotted oklch(0.98 0 0 / 80%);
-  border-radius: 28px;
-  padding: 0.75rem 1.5rem;
-  color: oklch(0.98 0 0);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  border: 1.5px dotted var(--border);
+  border-radius: 9999px;
+  padding: 0.75rem 1.6rem;
+  color: var(--foreground);
   font-size: 0.95rem;
   cursor: pointer;
   background: transparent;
-  transition: background-color 0.25s ease, color 0.25s ease, border-style 0.25s ease;
+  transition: background-color 0.25s ease, color 0.25s ease, border-style 0.25s ease, transform 0.2s ease;
 }
 .hero-pill:hover {
-  background-color: oklch(0.98 0 0);
-  color: oklch(0.08 0 0);
+  background-color: var(--foreground);
+  color: var(--background);
   border-style: solid;
+  transform: translateY(-1px);
 }
+
 .hero-pill--solid {
-  background-color: oklch(0.98 0 0);
-  color: oklch(0.08 0 0);
-  border-style: solid;
+  background-color: var(--foreground);
+  color: var(--background);
+  border: 1.5px solid var(--foreground);
 }
 .hero-pill--solid:hover {
   background-color: transparent;
-  color: oklch(0.98 0 0);
-  border-style: dotted;
+  color: var(--foreground);
+  border: 1.5px dotted var(--border);
+  transform: translateY(-1px);
 }
 
 .hero-meta {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 1.75rem;
   z-index: 1;
-  font-family: 'nanu', sans-serif;
-  font-size: 0.7rem;
-  color: oklch(0.98 0 0 / 50%);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
 }
 .hero-meta--date {
   left: 5%;

@@ -1,11 +1,8 @@
-/* Ported from Third/third.css: an asymmetric "recent cases" grid of
-   dashed-border panels, with a zoom-on-hover treatment for the project mark.
-   The giant word + ring is the shared .ghost-word/.ghost-ring pattern from
-   index.css, used identically across every section. */
+/* Asymmetric "recent cases" grid of dashed-border panels */
 
 .work-panel {
   position: relative;
-  font-family: 'bord', serif;
+  font-family: var(--font-sans);
   overflow: hidden;
   padding: 6rem 1.5rem;
 }
@@ -58,9 +55,12 @@
 }
 
 .work-case-title {
-  font-family: 'nanu', sans-serif;
+  font-family: var(--font-glory, 'Give You Glory', cursive);
+  font-size: 2.15rem;
+  line-height: 1.1;
+  font-weight: normal;
 }
 
 .work-case-desc {
-  font-family: 'nanu', sans-serif;
+  font-family: var(--font-sans);
 }

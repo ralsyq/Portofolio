@@ -1,0 +1,96 @@
+/* Medium-style editorial case study stylesheet with consistent typography: Give You Glory for titles, SF Pro for body */
+
+.shotcut-article-page {
+  font-family: var(--font-sans);
+  position: relative;
+  overflow-x: hidden;
+  line-height: 1.8;
+  color: oklch(0.12 0 0);
+  background-color: var(--background);
+}
+
+.shotcut-title {
+  font-family: var(--font-glory, 'Give You Glory', cursive);
+  color: oklch(0.12 0 0);
+  font-weight: normal;
+}
+
+.shotcut-content {
+  font-family: var(--font-sans);
+  color: oklch(0.12 0 0);
+}
+
+.shotcut-content p {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: oklch(0.12 0 0);
+}
+
+.shotcut-content h2 {
+  font-family: var(--font-glory, 'Give You Glory', cursive);
+  font-size: 2.35rem;
+  font-weight: normal;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: oklch(0.12 0 0);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.shotcut-content h3 {
+  font-family: var(--font-glory, 'Give You Glory', cursive);
+  font-size: 1.85rem;
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: oklch(0.12 0 0);
+}
+
+.shotcut-content strong {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: oklch(0.12 0 0);
+}
+
+.shotcut-content ul,
+.shotcut-content ol {
+  font-family: var(--font-sans);
+  color: oklch(0.12 0 0);
+}
+
+.shotcut-content li {
+  font-family: var(--font-sans);
+  color: oklch(0.12 0 0);
+}
+
+.shotcut-content figcaption {
+  font-family: var(--font-sans);
+}
+
+/* Dedicated Big Lesson Dark Card with high contrast white text */
+.big-lesson-card {
+  background-color: #0d0d0d !important;
+  color: #f5f5f5 !important;
+  border: 1px dotted rgba(255, 255, 255, 0.3) !important;
+}
+
+.big-lesson-card h3 {
+  font-family: var(--font-sans) !important;
+  color: #f5f5f5 !important;
+}
+
+.big-lesson-card span,
+.big-lesson-card p {
+  font-family: var(--font-sans) !important;
+  color: #f5f5f5 !important;
+}
+
+.big-lesson-card .big-lesson-tag {
+  font-family: var(--font-sans) !important;
+  color: rgba(245, 245, 245, 0.7) !important;
+}
+
+.big-lesson-cursor {
+  background-color: #f5f5f5 !important;
+}

@@ -4,7 +4,7 @@
 
 .experience-panel {
   position: relative;
-  font-family: 'bord', serif;
+  font-family: var(--font-sans);
   overflow: hidden;
   padding: 6rem 1.5rem;
 }

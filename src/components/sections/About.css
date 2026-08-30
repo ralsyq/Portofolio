@@ -1,17 +1,19 @@
-/* Ported from Second/second.css: a flowing manifesto-style paragraph column;
-   the giant word + ring decoration is the shared .ghost-word/.ghost-ring
-   pattern from index.css, used identically across every section. */
+/* About section layout with responsive manifesto copy and sticky character vector illustration */
 
 .about-panel {
   position: relative;
-  font-family: 'bord', serif;
+  font-family: var(--font-sans);
   overflow: hidden;
-  padding: 8rem 1.5rem 6rem;
+  padding: 7rem 1.5rem 6rem;
 }
 
 .about-copy {
-  font-family: 'nanu', sans-serif;
+  font-family: var(--font-sans);
   position: relative;
   z-index: 1;
-  max-width: 48rem;
+}
+
+.about-avatar-wrapper {
+  position: relative;
+  z-index: 1;
 }

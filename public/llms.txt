@@ -1,15 +1,12 @@
-# Ferion — Ujjwal Kumar Rai
+# Portfolio — Raisya Putri Agustin
 
-> Personal portfolio for Ujjwal Kumar Rai: AI security work, full-stack projects, career experience, and writing.
+> Personal portfolio for Raisya Putri Agustin: iOS Development, Augmented Reality, UI/UX Prototyping, Front-End Development, and HealthTech AI Writing.
 
 ## Sections
 
-- [About](/#about): Background and how I think about building things.
-- [Experience](/#experience): Career history, including Runable and Aevrin (Aegis AI).
-- [Work](/#work): Selected projects — Luxe, ShadyShard, KineTube, Twiligent.
-- [Awards](/#awards): Hackathon and competition recognitions.
-- [Writing](/#writing): Articles on development, security, and AI tooling.
+- [Work](/#work): Featured projects — STROOM AR, ShotCut, FastWear, KakYuh, BoxBox, PKL Sejahtera, InspoWall, Olist Analytical Dashboard.
+- [Writing](/#writing): Articles on clinical AI, health technology, and systems engineering.
 
 ## Notes
 
-This site is a single-page portfolio. All sections above live on the same page at different anchors.
+This site is a single-page portfolio with in-depth case study articles. All main sections live on the same page at different anchors.
