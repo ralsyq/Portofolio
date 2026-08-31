@@ -71,7 +71,7 @@ export function OlistArticle({ onBack }) {
           </h1>
 
           <p className="text-xl sm:text-2xl text-foreground font-sans font-light leading-relaxed mb-8">
-            Executive E-Commerce Performance Dashboard — Analyzing Sales Trends, Regional Shipping Delays, and Customer Sentiment with Tableau.
+            Executive E-Commerce Performance Dashboard: Analyzing Sales Trends, Regional Shipping Delays, and Customer Sentiment with Tableau.
           </p>
 
           {/* Author Badge */}
@@ -99,7 +99,7 @@ export function OlistArticle({ onBack }) {
           <MockupPlaceholder
             src={olistMockup}
             alt="Olist Company Performance Dashboard Showcase"
-            title="Olist Analytical Dashboard — Executive Overview"
+            title="Olist Analytical Dashboard: Executive Overview"
             badge="Tableau Dashboard"
             aspectRatio="aspect-[16/10]"
             caption="Olist Dashboard: Comprehensive business intelligence tracking 3,095 sellers, 96,096 customers, shipping delays, and product revenue trends."

@@ -136,10 +136,10 @@ export function ShotCutArticle({ onBack }) {
         <MockupPlaceholder
           src={heroMockup}
           alt="ShotCut iOS App Main Interface Showcase"
-          title="ShotCut iOS App — Main Interface Showcase"
+          title="ShotCut iOS App: Main Interface Showcase"
           badge="Hero Mockup"
           aspectRatio="aspect-[16/9]"
-          caption="ShotCut iOS App — Automated video frame detection & reference shot grid interface."
+          caption="ShotCut iOS App: Automated video frame detection & reference shot grid interface."
         />
 
         {/* Article Body Content */}
@@ -180,7 +180,7 @@ export function ShotCutArticle({ onBack }) {
 
             <h3 className="text-xl font-bold text-foreground pt-2">Why the Pivot?</h3>
             <p>
-              After broadening our exploratory research across the three key filmmaking phases—<strong>Pre-production</strong>, <strong>Production</strong>, and <strong>Post-production</strong>—we made a crucial discovery: the most exhausting friction did not occur on set with cameras rolling, but rather <em>before production</em> during manual reference scouting and frame curation.
+              After broadening our exploratory research across the three key filmmaking phases (<strong>Pre-production</strong>, <strong>Production</strong>, and <strong>Post-production</strong>), we made a crucial discovery: the most exhausting friction did not occur on set with cameras rolling, but rather <em>before production</em> during manual reference scouting and frame curation.
             </p>
           </section>
 
@@ -243,7 +243,7 @@ export function ShotCutArticle({ onBack }) {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-foreground font-sans">Rizki</h3>
-                  <p className="text-xs text-foreground font-sans">Primary Persona — The Cinematographer / Solo Creator</p>
+                  <p className="text-xs text-foreground font-sans">Primary Persona: The Cinematographer / Solo Creator</p>
                 </div>
               </div>
 
@@ -346,7 +346,7 @@ export function ShotCutArticle({ onBack }) {
               <MockupPlaceholder
                 src={improve1Img}
                 alt="Improvement 01: Custom Extraction Control"
-                title="Improvement 01 — Custom Extraction Control"
+                title="Improvement 01: Custom Extraction Control"
                 badge="Before vs After"
                 aspectRatio="aspect-[16/9]"
                 caption="Before: Fixed threshold algorithm. After: Interactive Sensitivity Slider for model threshold tuning."
@@ -355,7 +355,7 @@ export function ShotCutArticle({ onBack }) {
               <MockupPlaceholder
                 src={improve2Img}
                 alt="Improvement 02: Asset Management & Workflow"
-                title="Improvement 02 — Asset Management & Workflow"
+                title="Improvement 02: Asset Management & Workflow"
                 badge="Before vs After"
                 aspectRatio="aspect-[16/9]"
                 caption="Before: Static frame list. After: 3s before/after frame trimming with exact timestamps and multi-select batch actions."

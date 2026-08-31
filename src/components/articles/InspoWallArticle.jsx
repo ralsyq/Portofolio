@@ -71,7 +71,7 @@ export function InspoWallArticle({ onBack }) {
           </h1>
 
           <p className="text-xl sm:text-2xl text-foreground font-sans font-light leading-relaxed mb-8">
-            A Quick Daily Motivational Website — Transforming Academic Burnout into an Uplifting Digital Routine with Vite & Vanilla JS.
+            A Quick Daily Motivational Website: Transforming Academic Burnout into an Uplifting Digital Routine with Vite & Vanilla JS.
           </p>
 
           {/* Author Badge */}
@@ -99,7 +99,7 @@ export function InspoWallArticle({ onBack }) {
           <MockupPlaceholder
             src={inspowallMockup}
             alt="InspoWall Web App Interface Showcase"
-            title="InspoWall — Daily Motivational Web Experience"
+            title="InspoWall: Daily Motivational Web Experience"
             badge="Web Application"
             aspectRatio="aspect-[16/10]"
             caption="InspoWall: Minimalist daily motivational web app providing uplifting quotes and positive morning routines."

@@ -4,8 +4,8 @@ import { gsap, ScrollTrigger, useGSAP } from '@/lib/gsap';
 /**
  * Fixed, never-scrolling background plane that every section glides over.
  * The rest of the page paints no opaque background of its own (see the
- * `body`/App-root rules in index.css) so this canvas — dot grid warped by an
- * SVG liquid-distortion filter, plus a slow scroll-linked glow — reads
+ * `body`/App-root rules in index.css), allowing this canvas (a dot grid warped by an
+ * SVG liquid-distortion filter with a slow scroll-linked glow) to read
  * through in the negative space around and between sections.
  */
 export function DepthField() {
@@ -15,7 +15,7 @@ export function DepthField() {
   useGSAP(() => {
     // feTurbulence recompute is expensive (not GPU-accelerated) and this filter
     // covers the full viewport, so the value is stepped rather than tweened
-    // continuously — same slow "living" drift at a fraction of the paint cost.
+    // continuously, giving the same slow "living" drift at a fraction of the paint cost.
     gsap.to(turbulenceRef.current, {
       attr: { baseFrequency: '0.014 0.02' },
       duration: 20,

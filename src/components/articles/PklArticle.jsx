@@ -71,7 +71,7 @@ export function PklArticle({ onBack }) {
           </h1>
 
           <p className="text-xl sm:text-2xl text-foreground font-sans font-light leading-relaxed mb-8">
-            UI Design for a Social Intervention Program — Collaborating with Psychology Students to Organize Sidewalk Street Vendors at Bekasi Station.
+            UI Design for a Social Intervention Program: Collaborating with Psychology Students to Organize Sidewalk Street Vendors at Bekasi Station.
           </p>
 
           {/* Author Badge */}
@@ -99,7 +99,7 @@ export function PklArticle({ onBack }) {
           <MockupPlaceholder
             src={pklMockup}
             alt="PKL Sejahtera UI Design Showcase"
-            title="PKL Sejahtera — Mobile Interface Showcase"
+            title="PKL Sejahtera: Mobile Interface Showcase"
             badge="Social Intervention UI"
             aspectRatio="aspect-[16/10]"
             caption="PKL Sejahtera: Empowering street vendors through inventory tracking, legal designated zones, and educational modules."

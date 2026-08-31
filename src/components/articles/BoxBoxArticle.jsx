@@ -71,7 +71,7 @@ export function BoxBoxArticle({ onBack }) {
           </h1>
 
           <p className="text-xl sm:text-2xl text-foreground font-sans font-light leading-relaxed mb-8">
-            UI/UX Design for a Self-Storage Space Booking Application — Balancing Simplicity and Functionality in a 24-Hour Design Challenge.
+            UI/UX Design for a Self-Storage Space Booking Application: Balancing Simplicity and Functionality in a 24-Hour Design Challenge.
           </p>
 
           {/* Author Badge */}
@@ -99,7 +99,7 @@ export function BoxBoxArticle({ onBack }) {
           <MockupPlaceholder
             src={boxboxMockup}
             alt="BoxBox Storage App UI/UX Design Showcase"
-            title="BoxBox — Self-Storage App UI/UX Showcase"
+            title="BoxBox: Self-Storage App UI/UX Showcase"
             badge="Design Overview"
             aspectRatio="aspect-[16/10]"
             caption="BoxBox: Comprehensive 24-hour design sprint covering task flows, user journeys, paper wireframes, and Figma prototypes."

@@ -83,7 +83,7 @@ export function UrbiqueArticle({ onBack }) {
           </h1>
 
           <p className="text-xl sm:text-2xl text-foreground font-sans font-light leading-relaxed mb-8">
-            Your AI Stylist from Your Own Wardrobe — Helping office workers dress with confidence and eliminate morning decision fatigue.
+            Your AI Stylist from Your Own Wardrobe: Helping office workers dress with confidence and eliminate morning decision fatigue.
           </p>
 
           {/* Author Badge */}
@@ -111,16 +111,16 @@ export function UrbiqueArticle({ onBack }) {
           <MockupPlaceholder
             src={mockup1}
             alt="FastWear iOS App Hero Showcase"
-            title="FastWear iOS App — Hero Showcase"
+            title="FastWear iOS App: Hero Showcase"
             badge="Hero Mockup"
             aspectRatio="aspect-[16/9]"
-            caption="FastWear iOS App — Your AI Stylist from Your Own Wardrobe."
+            caption="FastWear iOS App: Your AI Stylist from Your Own Wardrobe."
           />
 
           <MockupPlaceholder
             src={mockup2}
             alt="FastWear iOS App Interface Experience"
-            title="FastWear iOS App — Digital Wardrobe & Mix and Match"
+            title="FastWear iOS App: Digital Wardrobe & Mix and Match"
             badge="Interface Showcase"
             aspectRatio="aspect-[16/9]"
             caption="Dress with confidence every workday."
@@ -146,7 +146,7 @@ export function UrbiqueArticle({ onBack }) {
               title="Daily Time Spent & Lifetime Duration"
               badge="Survey Findings"
               aspectRatio="aspect-[16/9]"
-              caption="Marks & Spencer Survey (2,000 participants): 13–17 minutes spent daily, 4–6 months over a lifetime, and only 44% of clothes worn regularly."
+              caption="Marks & Spencer Survey (2,000 participants): 13-17 minutes spent daily, 4-6 months over a lifetime, and only 44% of clothes worn regularly."
             />
           </section>
 

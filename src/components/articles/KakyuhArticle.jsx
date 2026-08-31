@@ -99,7 +99,7 @@ export function KakyuhArticle({ onBack }) {
           <MockupPlaceholder
             src={kakyuhMockup}
             alt="KakYuh Bike Rental App Interface Showcase"
-            title="KakYuh — Mobile Bike Rental App Showcase"
+            title="KakYuh: Mobile Bike Rental App Showcase"
             badge="Project Overview"
             aspectRatio="aspect-[16/10]"
             caption="KakYuh: A simple, fast-paced bike rental mobile app featuring Firebase integration and frictionless user flows."

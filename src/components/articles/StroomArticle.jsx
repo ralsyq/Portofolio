@@ -79,7 +79,7 @@ export function StroomArticle({ onBack }) {
           </h1>
 
           <p className="text-xl sm:text-2xl text-foreground font-sans font-light leading-relaxed mb-8">
-            3D Augmented Reality to Learn Electricity Through Interactive Lamp Circuits — Empowering young robotics learners to visualize invisible power flows in real time.
+            3D Augmented Reality to Learn Electricity Through Interactive Lamp Circuits: Empowering young robotics learners to visualize invisible power flows in real time.
           </p>
 
           {/* Author Badge */}
@@ -107,10 +107,10 @@ export function StroomArticle({ onBack }) {
           <MockupPlaceholder
             src={mockupImg}
             alt="STROOM iOS App Interface Showcase"
-            title="STROOM iOS App — Interface Mockup"
+            title="STROOM iOS App: Interface Mockup"
             badge="Hero Mockup"
             aspectRatio="aspect-[16/9]"
-            caption="STROOM iOS App — 3D Augmented Reality to Learn Electricity Through Interactive Lamp Circuits."
+            caption="STROOM iOS App: 3D Augmented Reality to Learn Electricity Through Interactive Lamp Circuits."
           />
         </div>
 
@@ -123,7 +123,7 @@ export function StroomArticle({ onBack }) {
               1. The Challenge & User Persona
             </h2>
             <p>
-              For young beginner robotics students (ages 10–16), learning electronics fundamentals can be overwhelmingly abstract. While putting together mechanical chassis and motors is exciting, grasping electrical current flow remains an invisible barrier.
+              For young beginner robotics students (ages 10-16), learning electronics fundamentals can be overwhelmingly abstract. While putting together mechanical chassis and motors is exciting, grasping electrical current flow remains an invisible barrier.
             </p>
 
             <ul className="list-disc pl-5 space-y-2 text-foreground/90">
@@ -141,11 +141,11 @@ export function StroomArticle({ onBack }) {
             {/* Persona Image */}
             <MockupPlaceholder
               src={personaImg}
-              alt="STROOM User Persona - Beginner Robotics Learner"
+              alt="STROOM User Persona: Beginner Robotics Learner"
               title="User Persona & Core Pain Points"
               badge="User Research"
               aspectRatio="aspect-[16/9]"
-              caption="Target Audience: Beginner robotics students aged 10–16 encountering abstract electronics concepts."
+              caption="Target Audience: Beginner robotics students aged 10-16 encountering abstract electronics concepts."
             />
           </section>
 
@@ -269,7 +269,7 @@ export function StroomArticle({ onBack }) {
               Transforming Invisible Physics into Tangible Joy
             </h3>
             <p className="mt-4 text-base leading-relaxed text-white/90 font-sans">
-              "By moving electrical education out of dry 2D textbooks and into spatial 3D Augmented Reality, students don't just memorize formulas — they gain an intuitive mental model of how electricity flows through their world."
+              "By moving electrical education out of dry 2D textbooks and into spatial 3D Augmented Reality, students don't just memorize formulas, they gain an intuitive mental model of how electricity flows through their world."
             </p>
           </div>
 
