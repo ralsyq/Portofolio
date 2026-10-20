@@ -151,7 +151,7 @@ export function Work({ onOpenArticle }) {
             className="text-4xl font-normal tracking-tight text-foreground uppercase sm:text-5xl"
           />
 
-          <div className="mt-6 flex flex-wrap items-center gap-2.5 sm:gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3 sm:gap-4">
             {CATEGORIES.map((cat) => {
               const isSelected = selectedCategory === cat;
               return (
@@ -166,13 +166,24 @@ export function Work({ onOpenArticle }) {
                     }
                     setSelectedCategory(cat);
                   }}
-                  style={
-                    isSelected
+                  style={{
+                    height: '46px',
+                    padding: '0 32px',
+                    minWidth: cat === 'All' ? '88px' : 'auto',
+                    borderRadius: '9999px',
+                    borderWidth: '2px',
+                    borderStyle: 'solid',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    whiteSpace: 'nowrap',
+                    boxSizing: 'border-box',
+                    ...(isSelected
                       ? { backgroundColor: '#111827', color: '#ffffff', borderColor: '#111827' }
-                      : { backgroundColor: '#ffffff', color: '#1f2937', borderColor: '#d1d5db' }
-                  }
+                      : { backgroundColor: '#ffffff', color: '#1f2937', borderColor: '#d1d5db' }),
+                  }}
                   className={cn(
-                    'inline-flex items-center justify-center whitespace-nowrap shrink-0 rounded-full border-2 h-10 sm:h-11 px-5 sm:px-6 text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer active:scale-95 shadow-xs leading-none select-none',
+                    'text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer active:scale-95 shadow-xs select-none shrink-0',
                     isSelected
                       ? 'shadow-sm'
                       : 'hover:border-neutral-900 hover:text-neutral-900 hover:bg-neutral-50'
