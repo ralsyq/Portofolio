@@ -33,11 +33,11 @@ export function MockupPlaceholder({
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(oklch(0.12_0_0/0.12)_1px,transparent_1px)] [background-size:18px_18px]" />
 
         <div className="relative z-10 flex flex-col items-center max-w-md">
-          <div className="mb-3 flex size-12 items-center justify-center rounded-2xl border border-dotted border-border bg-background shadow-xs">
+          <div className="mb-3 flex size-12 items-center justify-center rounded-2xl border border-border/80 bg-background shadow-xs">
             <ImageIcon className="size-6 text-foreground" />
           </div>
 
-          <span className="inline-flex items-center gap-1 rounded-full border border-dotted border-border bg-background px-3 py-1 text-[11px] font-sans text-foreground font-medium uppercase">
+          <span className="inline-flex items-center gap-1 rounded-full border border-border/80 bg-background px-3 py-1 text-[11px] font-sans text-foreground font-medium uppercase">
             ✦ {badge}
           </span>
 

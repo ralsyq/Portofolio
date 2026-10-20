@@ -40,7 +40,7 @@ export function UrbiqueArticle({ onBack }) {
         <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3.5 sm:px-6">
           <button
             onClick={handleBack}
-            className="inline-flex items-center gap-2 rounded-full border border-dotted border-border bg-background px-4 py-1.5 text-xs font-sans text-foreground transition-all hover:border-foreground hover:bg-foreground hover:text-background cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background px-4 py-1.5 text-xs font-sans text-foreground transition-all hover:border-foreground hover:bg-foreground hover:text-background cursor-pointer"
           >
             <ArrowLeft className="size-3.5" />
             <span>Back to Portfolio</span>
@@ -59,7 +59,7 @@ export function UrbiqueArticle({ onBack }) {
                   alert('Link copied to clipboard!');
                 }
               }}
-              className="rounded-full border border-dotted border-border p-2 text-foreground hover:bg-foreground hover:text-background transition-colors cursor-pointer"
+              className="rounded-full border border-border/80 p-2 text-foreground hover:bg-foreground hover:text-background transition-colors cursor-pointer"
               title="Share Case Study"
             >
               <Share2 className="size-3.5" />
@@ -73,7 +73,7 @@ export function UrbiqueArticle({ onBack }) {
         {/* Article Meta Header */}
         <header className="mb-14">
           <div className="mb-8 flex flex-wrap items-center gap-2.5">
-            <span className="rounded-full border border-dotted border-border bg-background px-3.5 py-1.5 text-xs font-sans text-foreground uppercase tracking-wider">
+            <span className="rounded-full border border-border/80 bg-background px-3.5 py-1.5 text-xs font-sans text-foreground uppercase tracking-wider">
               iOS Product Design Case Study
             </span>
           </div>
@@ -283,7 +283,7 @@ export function UrbiqueArticle({ onBack }) {
           <footer className="pt-8 border-t border-dashed border-border space-y-6">
             <div className="flex flex-wrap gap-2">
               {['iOS Development', 'SwiftUI', 'CoreML', 'VisionKit', 'Apple HIG', 'Product Design'].map((tag) => (
-                <span key={tag} className="rounded-full border border-dotted border-border bg-background px-3 py-1 text-xs font-sans text-foreground">
+                <span key={tag} className="rounded-full border border-border/80 bg-background px-3 py-1 text-xs font-sans text-foreground">
                   #{tag}
                 </span>
               ))}
@@ -299,7 +299,7 @@ export function UrbiqueArticle({ onBack }) {
                   href="https://www.linkedin.com/in/raisya-putri-agustin/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-dotted border-border bg-background p-2.5 text-foreground hover:bg-foreground hover:text-background transition-colors"
+                  className="rounded-full border border-border/80 bg-background p-2.5 text-foreground hover:bg-foreground hover:text-background transition-colors"
                 >
                   <FaLinkedin className="size-4" />
                 </a>
@@ -307,7 +307,7 @@ export function UrbiqueArticle({ onBack }) {
                   href="https://instagram.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-dotted border-border bg-background p-2.5 text-foreground hover:bg-foreground hover:text-background transition-colors"
+                  className="rounded-full border border-border/80 bg-background p-2.5 text-foreground hover:bg-foreground hover:text-background transition-colors"
                 >
                   <FaInstagram className="size-4" />
                 </a>

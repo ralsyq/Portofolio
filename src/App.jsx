@@ -63,13 +63,15 @@ export default function App() {
 
   const closeArticle = () => {
     setActiveArticle(null);
-    window.location.hash = '#work';
+    window.history.replaceState(null, '', window.location.pathname);
+    setTimeout(() => {
+      scrollToSection('work');
+    }, 50);
   };
 
   if (activeArticle === 'stroom') {
     return (
       <div className="min-h-screen">
-        <div className="noise" aria-hidden="true" />
         <StroomArticle onBack={closeArticle} />
       </div>
     );
@@ -78,7 +80,6 @@ export default function App() {
   if (activeArticle === 'shotcut') {
     return (
       <div className="min-h-screen">
-        <div className="noise" aria-hidden="true" />
         <ShotCutArticle onBack={closeArticle} />
       </div>
     );
@@ -87,7 +88,6 @@ export default function App() {
   if (activeArticle === 'urbique' || activeArticle === 'fastwear') {
     return (
       <div className="min-h-screen">
-        <div className="noise" aria-hidden="true" />
         <UrbiqueArticle onBack={closeArticle} />
       </div>
     );
@@ -96,7 +96,6 @@ export default function App() {
   if (activeArticle === 'kakyuh') {
     return (
       <div className="min-h-screen">
-        <div className="noise" aria-hidden="true" />
         <KakyuhArticle onBack={closeArticle} />
       </div>
     );
@@ -105,7 +104,6 @@ export default function App() {
   if (activeArticle === 'boxbox') {
     return (
       <div className="min-h-screen">
-        <div className="noise" aria-hidden="true" />
         <BoxBoxArticle onBack={closeArticle} />
       </div>
     );
@@ -114,7 +112,6 @@ export default function App() {
   if (activeArticle === 'pkl-sejahtera' || activeArticle === 'pkl') {
     return (
       <div className="min-h-screen">
-        <div className="noise" aria-hidden="true" />
         <PklArticle onBack={closeArticle} />
       </div>
     );
@@ -123,7 +120,6 @@ export default function App() {
   if (activeArticle === 'inspowall') {
     return (
       <div className="min-h-screen">
-        <div className="noise" aria-hidden="true" />
         <InspoWallArticle onBack={closeArticle} />
       </div>
     );
@@ -132,7 +128,6 @@ export default function App() {
   if (activeArticle === 'olist') {
     return (
       <div className="min-h-screen">
-        <div className="noise" aria-hidden="true" />
         <OlistArticle onBack={closeArticle} />
       </div>
     );
@@ -140,7 +135,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen">
-      <div className="noise" aria-hidden="true" />
       <DepthField />
       <Navbar />
 

@@ -28,7 +28,7 @@ export function OlistArticle({ onBack }) {
         <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3.5 sm:px-6">
           <button
             onClick={handleBack}
-            className="inline-flex items-center gap-2 rounded-full border border-dotted border-border bg-background px-4 py-1.5 text-xs font-sans text-foreground transition-all hover:border-foreground hover:bg-foreground hover:text-background cursor-pointer"
+            className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background px-4 py-1.5 text-xs font-sans text-foreground transition-all hover:border-foreground hover:bg-foreground hover:text-background cursor-pointer"
           >
             <ArrowLeft className="size-3.5" />
             <span>Back to Portfolio</span>
@@ -47,7 +47,7 @@ export function OlistArticle({ onBack }) {
                   alert('Link copied to clipboard!');
                 }
               }}
-              className="rounded-full border border-dotted border-border p-2 text-foreground hover:bg-foreground hover:text-background transition-colors cursor-pointer"
+              className="rounded-full border border-border/80 p-2 text-foreground hover:bg-foreground hover:text-background transition-colors cursor-pointer"
               title="Share Case Study"
             >
               <Share2 className="size-3.5" />
@@ -61,7 +61,7 @@ export function OlistArticle({ onBack }) {
         {/* Article Meta Header */}
         <header className="mb-14">
           <div className="mb-8 flex flex-wrap items-center gap-2.5">
-            <span className="rounded-full border border-dotted border-border bg-background px-3.5 py-1.5 text-xs font-sans text-foreground uppercase tracking-wider">
+            <span className="rounded-full border border-border/80 bg-background px-3.5 py-1.5 text-xs font-sans text-foreground uppercase tracking-wider">
               Data Analytics & Business Intelligence
             </span>
           </div>
@@ -173,7 +173,7 @@ export function OlistArticle({ onBack }) {
                 href="https://www.linkedin.com/in/raisya-putri-agustin/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-dotted border-border bg-background p-2.5 text-foreground hover:bg-foreground hover:text-background transition-colors"
+                className="rounded-full border border-border/80 bg-background p-2.5 text-foreground hover:bg-foreground hover:text-background transition-colors"
                 title="Connect on LinkedIn"
               >
                 <FaLinkedin className="size-4" />
@@ -182,7 +182,7 @@ export function OlistArticle({ onBack }) {
                 href="https://instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-dotted border-border bg-background p-2.5 text-foreground hover:bg-foreground hover:text-background transition-colors"
+                className="rounded-full border border-border/80 bg-background p-2.5 text-foreground hover:bg-foreground hover:text-background transition-colors"
                 title="Instagram"
               >
                 <FaInstagram className="size-4" />

@@ -7,6 +7,7 @@
   background: var(--background);
   color: var(--foreground);
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,19 +40,19 @@
 .hero-pill {
   font-family: var(--font-sans);
   font-weight: 500;
-  border: 1.5px dotted var(--border);
+  border: 1.5px solid var(--border);
   border-radius: 9999px;
   padding: 0.75rem 1.6rem;
   color: var(--foreground);
   font-size: 0.95rem;
   cursor: pointer;
   background: transparent;
-  transition: background-color 0.25s ease, color 0.25s ease, border-style 0.25s ease, transform 0.2s ease;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
 }
 .hero-pill:hover {
   background-color: var(--foreground);
   color: var(--background);
-  border-style: solid;
+  border-color: var(--foreground);
   transform: translateY(-1px);
 }
 
@@ -63,7 +64,7 @@
 .hero-pill--solid:hover {
   background-color: transparent;
   color: var(--foreground);
-  border: 1.5px dotted var(--border);
+  border-color: var(--foreground);
   transform: translateY(-1px);
 }
 

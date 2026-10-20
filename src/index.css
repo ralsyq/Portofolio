@@ -112,18 +112,9 @@
     --color-error-content: oklch(0.98 0.012 85);
 }
 
-/* ─── Fixed film-grain overlay ──────────────── */
-.noise::before {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  content: "";
-  opacity: 0.1;
-  z-index: 1000;
-  pointer-events: none;
-  background: url("./assets/noise.gif");
+/* ─── Noise overlay removed ──────────────── */
+.noise {
+  display: none !important;
 }
 
 /* ─── Section ghost word using Give You Glory ──── */

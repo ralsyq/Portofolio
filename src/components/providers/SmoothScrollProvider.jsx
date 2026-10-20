@@ -32,6 +32,15 @@ function LenisGsapBridge() {
 
     setLenisInstance(lenis);
     if (import.meta.env.DEV) window.__lenis = lenis;
+
+    if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    if (!window.location.hash || window.location.hash === '#hero') {
+      lenis.scrollTo(0, { immediate: true });
+    }
+
     lenis.on('scroll', ScrollTrigger.update);
 
     const update = (time) => lenis.raf(time * 1000);

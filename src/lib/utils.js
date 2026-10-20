@@ -13,6 +13,16 @@ export function formatPeriod(dateStr) {
 }
 
 export function scrollToSection(id) {
+  if (id === 'hero') {
+    const lenis = getLenisInstance();
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 1.2 });
+      return;
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
   const el = document.getElementById(id);
   if (!el) return;
 

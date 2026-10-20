@@ -24,10 +24,20 @@ export function Work({ onOpenArticle }) {
   const smoothX = useSpring(rawX, { stiffness: 600, damping: 35, mass: 0.1 });
   const smoothY = useSpring(rawY, { stiffness: 600, damping: 35, mass: 0.1 });
 
+  const categoryCounts = {
+    All: projects.length,
+    'iOS Apps': projects.filter((p) => p.category === 'iOS Apps' || (p.category || '').toLowerCase().includes('ios')).length,
+    'Web Apps': projects.filter((p) => p.category === 'Web Apps' || (p.category || '').toLowerCase().includes('web')).length,
+    'UI/UX Prototype': projects.filter((p) => p.category === 'UI/UX Prototype' || (p.category || '').toLowerCase().includes('ui')).length,
+    'Data Analysis': projects.filter((p) => p.category === 'Data Analysis' || (p.category || '').toLowerCase().includes('data')).length,
+  };
+
   const filteredProjects = selectedCategory === 'All'
     ? projects
     : projects.filter((p) => {
-        const cat = (p.category || '').toLowerCase();
+        if (!p.category) return false;
+        if (p.category === selectedCategory) return true;
+        const cat = p.category.toLowerCase();
         const selected = selectedCategory.toLowerCase();
         if (selected === 'ios apps') return cat.includes('ios') || cat.includes('swift') || cat.includes('mobile');
         if (selected === 'web apps') return cat.includes('web') || cat.includes('ai') || cat.includes('desktop');
@@ -112,7 +122,7 @@ export function Work({ onOpenArticle }) {
                 </span>
                 <span className="text-[11px] font-sans text-muted-foreground">• {hoveredProjectData.title}</span>
               </div>
-              <span className="rounded-full border border-dotted border-border px-2 py-0.5 text-[9px] font-sans text-foreground font-semibold">
+              <span className="rounded-full border border-border/80 px-2.5 py-0.5 text-[9px] font-sans text-foreground font-semibold">
                 UI Preview
               </span>
             </div>
@@ -149,123 +159,152 @@ export function Work({ onOpenArticle }) {
             className="text-4xl font-normal tracking-tight text-foreground uppercase sm:text-5xl"
           />
 
-          <div className="mt-6 flex flex-wrap items-center gap-2">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => {
-                  playClick();
-                  setSelectedCategory(cat);
-                }}
-                className={cn(
-                  'rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors cursor-pointer',
-                  selectedCategory === cat
-                    ? 'border-foreground bg-foreground text-background'
-                    : 'border-dotted border-border bg-background/80 text-muted-foreground backdrop-blur-md hover:border-foreground hover:text-foreground'
-                )}
-              >
-                {cat}
-              </button>
-            ))}
+          <div className="mt-6 flex flex-wrap items-center gap-2 sm:gap-2.5">
+            {CATEGORIES.map((cat) => {
+              const isSelected = selectedCategory === cat;
+              const count = categoryCounts[cat] ?? 0;
+              return (
+                <button
+                  key={cat}
+                  type="button"
+                  onClick={() => {
+                    try {
+                      playClick?.();
+                    } catch {
+                      // ignore sound error
+                    }
+                    setSelectedCategory(cat);
+                  }}
+                  className={cn(
+                    'group inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer active:scale-95',
+                    isSelected
+                      ? 'border-foreground bg-foreground text-background shadow-xs'
+                      : 'border-border/80 bg-background/90 text-muted-foreground hover:border-foreground hover:text-foreground hover:bg-muted/40'
+                  )}
+                >
+                  <span>{cat}</span>
+                  <span
+                    className={cn(
+                      'inline-flex items-center justify-center rounded-full px-2 py-0.5 text-[10px] font-semibold transition-colors',
+                      isSelected
+                        ? 'bg-background/20 text-background'
+                        : 'bg-muted text-muted-foreground group-hover:bg-foreground/10 group-hover:text-foreground'
+                    )}
+                  >
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
 
-        <div className="work-grid">
-          {filteredProjects.map((project) => {
-            return (
-              <div
-                key={project.title}
-                onClick={(e) => handleCardClick(project, e)}
-                onMouseEnter={(e) => handleMouseEnter(project, e)}
-                onMouseLeave={handleMouseLeave}
-                onMouseMove={(e) => handleMouseMove(project, e)}
-                className={cn(
-                  'work-case group relative transition-all duration-300',
-                  project.hasArticle && 'cursor-pointer hover:shadow-lg hover:border-foreground/50'
-                )}
-              >
-                <div className="flex items-start justify-between">
-                  <div className="work-case-thumb flex size-14 items-center justify-center bg-muted">
-                    <img
-                      src={project.logo}
-                      alt={project.title}
-                      loading="lazy"
-                      decoding="async"
-                      className="size-10 object-contain grayscale transition-[filter] duration-500 ease-out group-hover:grayscale-0"
-                    />
-                  </div>
+        <motion.div layout className="work-grid">
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project) => {
+              return (
+                <motion.div
+                  layout
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.22, ease: 'easeOut' }}
+                  key={project.id || project.title}
+                  onClick={(e) => handleCardClick(project, e)}
+                  onMouseEnter={(e) => handleMouseEnter(project, e)}
+                  onMouseLeave={handleMouseLeave}
+                  onMouseMove={(e) => handleMouseMove(project, e)}
+                  className={cn(
+                    'work-case group relative transition-all duration-300',
+                    filteredProjects.length === 1 && 'lg:!col-span-12',
+                    filteredProjects.length === 2 && 'lg:!col-span-6',
+                    project.hasArticle && 'cursor-pointer hover:shadow-lg hover:border-foreground/50'
+                  )}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="work-case-thumb flex size-14 items-center justify-center bg-muted">
+                      <img
+                        src={project.logo}
+                        alt={project.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="size-10 object-contain grayscale transition-[filter] duration-500 ease-out group-hover:grayscale-0"
+                      />
+                    </div>
 
-                  <div className="flex items-center gap-2.5">
-                    {project.hasArticle && (
-                      <button
+                    <div className="flex items-center gap-2.5">
+                      {project.hasArticle && (
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            try { playClick?.(); } catch {}
+                            if (onOpenArticle) onOpenArticle(project.articleSlug || project.id);
+                          }}
+                          className="inline-flex items-center gap-1 rounded-full border border-border/80 bg-background px-3 py-1 text-[11px] font-medium text-foreground hover:bg-foreground hover:text-background transition-colors cursor-pointer"
+                        >
+                          <BookOpen className="size-3" />
+                          <span>Case Study</span>
+                        </button>
+                      )}
+
+                      <a
+                        href={project.demoUrl}
+                        target={project.hasArticle ? '_self' : '_blank'}
+                        rel="noopener noreferrer"
                         onClick={(e) => {
                           e.stopPropagation();
-                          playClick();
-                          if (onOpenArticle) onOpenArticle(project.articleSlug || project.id);
+                          if (project.hasArticle) {
+                            e.preventDefault();
+                            try { playClick?.(); } catch {}
+                            if (onOpenArticle) onOpenArticle(project.articleSlug || project.id);
+                          } else {
+                            try { playClick?.(); } catch {}
+                          }
                         }}
-                        className="inline-flex items-center gap-1 rounded-full border border-border bg-background px-2.5 py-1 text-[11px] font-medium text-foreground hover:bg-foreground hover:text-background transition-colors cursor-pointer"
+                        aria-label={`${project.title} live demo`}
+                        className="text-muted-foreground transition-colors hover:text-foreground p-1"
                       >
-                        <BookOpen className="size-3" />
-                        <span>Case Study</span>
-                      </button>
-                    )}
-
-                    <a
-                      href={project.demoUrl}
-                      target={project.hasArticle ? '_self' : '_blank'}
-                      rel="noopener noreferrer"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        if (project.hasArticle) {
-                          e.preventDefault();
-                          playClick();
-                          if (onOpenArticle) onOpenArticle(project.articleSlug || project.id);
-                        } else {
-                          playClick();
-                        }
-                      }}
-                      aria-label={`${project.title} live demo`}
-                      className="text-muted-foreground transition-colors hover:text-foreground p-1"
-                    >
-                      <ArrowUpRight className="size-5" />
-                    </a>
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="block text-[11px] tracking-widest text-primary uppercase font-sans">
-                      {project.category}
-                    </span>
-                    {project.frameworks && (
-                      <div className="hidden sm:flex items-center gap-1.5">
-                        {project.frameworks.slice(0, 2).map((fw) => (
-                          <span key={fw} className="rounded bg-muted/60 px-1.5 py-0.5 text-[10px] font-sans text-muted-foreground">
-                            {fw}
-                          </span>
-                        ))}
-                      </div>
-                    )}
+                        <ArrowUpRight className="size-5" />
+                      </a>
+                    </div>
                   </div>
 
-                  <h3 className="work-case-title text-2xl font-normal tracking-tight text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
+                  <div className="mt-8">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="block text-[11px] tracking-widest text-primary uppercase font-sans">
+                        {project.category}
+                      </span>
+                      {project.frameworks && (
+                        <div className="hidden sm:flex items-center gap-1.5">
+                          {project.frameworks.slice(0, 2).map((fw) => (
+                            <span key={fw} className="rounded bg-muted/60 px-1.5 py-0.5 text-[10px] font-sans text-muted-foreground">
+                              {fw}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
 
-                  <p className="mt-1 font-sans text-sm font-medium text-muted-foreground">
-                    {project.tagline}
-                  </p>
+                    <h3 className="work-case-title text-2xl font-normal tracking-tight text-foreground group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
 
-                  <ul className="work-case-desc mt-3 list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-muted-foreground">
-                    {project.description.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+                    <p className="mt-1 font-sans text-sm font-medium text-muted-foreground">
+                      {project.tagline}
+                    </p>
+
+                    <ul className="work-case-desc mt-3 list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-muted-foreground">
+                      {project.description.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

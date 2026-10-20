@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { navItems } from '@/data/nav';
@@ -38,22 +38,25 @@ export function Navbar() {
       <header ref={headerRef} className="fixed top-3 sm:top-5 left-0 z-50 w-full">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
           <button
+            type="button"
             onClick={() => goTo('hero')}
-            className="rounded-full border border-dotted border-border bg-background/80 px-3.5 py-1.5 text-sm tracking-widest text-foreground shadow-sm backdrop-blur-md"
+            className="group flex items-center gap-2.5 rounded-full border border-border/80 bg-background/90 px-4 py-2 text-xs sm:text-sm font-medium tracking-wide text-foreground shadow-xs backdrop-blur-md transition-all duration-200 hover:border-foreground hover:bg-foreground hover:text-background cursor-pointer active:scale-95"
           >
-            Raisya's Portofolio
+            <span className="size-2 rounded-full bg-emerald-500 transition-transform group-hover:scale-125" />
+            <span className="font-sans font-medium">Raisya's Portofolio</span>
           </button>
 
           <nav className="hidden items-center gap-2 lg:flex">
             {navItems.map((item) => (
               <button
                 key={item.id}
+                type="button"
                 onClick={() => goTo(item.id)}
                 className={cn(
-                  'rounded-full border px-3.5 py-1.5 text-sm font-medium transition-all cursor-pointer',
+                  'rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200 cursor-pointer active:scale-95',
                   active === item.id
-                    ? 'border-foreground bg-foreground text-background shadow-sm'
-                    : 'border-dotted border-border bg-background/90 text-foreground/80 backdrop-blur-md hover:border-foreground hover:bg-foreground hover:text-background'
+                    ? 'border-foreground bg-foreground text-background shadow-xs'
+                    : 'border-border/80 bg-background/90 text-foreground/80 backdrop-blur-md hover:border-foreground hover:bg-foreground hover:text-background'
                 )}
               >
                 {item.label}
@@ -64,7 +67,7 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className="rounded-full border border-dotted border-border bg-background/80 backdrop-blur-md lg:hidden"
+            className="rounded-full border border-border/80 bg-background/90 backdrop-blur-md lg:hidden cursor-pointer hover:border-foreground"
             aria-label="Open menu"
             onClick={() => setMobileOpen(true)}
           >
