@@ -4,7 +4,7 @@
   position: relative;
   font-family: var(--font-sans);
   overflow: hidden;
-  padding: 6rem 1.5rem;
+  padding: 7rem 1.5rem 6rem;
 }
 
 .work-grid {

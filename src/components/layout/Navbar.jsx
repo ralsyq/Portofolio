@@ -35,15 +35,15 @@ export function Navbar() {
 
   return (
     <>
-      <header ref={headerRef} className="fixed top-3 sm:top-5 left-0 z-50 w-full">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <header ref={headerRef} className="fixed top-0 left-0 z-50 w-full border-b border-border/40 bg-background/85 backdrop-blur-md transition-all">
+        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 lg:px-8">
           <button
             type="button"
             onClick={() => goTo('hero')}
-            className="group flex items-center gap-2.5 rounded-full border border-border/80 bg-background/90 px-4 py-2 text-xs sm:text-sm font-medium tracking-wide text-foreground shadow-xs backdrop-blur-md transition-all duration-200 hover:border-foreground hover:bg-foreground hover:text-background cursor-pointer active:scale-95"
+            className="group flex items-center gap-2.5 text-sm font-medium tracking-tight text-foreground transition-opacity hover:opacity-80 cursor-pointer"
           >
             <span className="size-2 rounded-full bg-emerald-500 transition-transform group-hover:scale-125" />
-            <span className="font-sans font-medium">Raisya's Portofolio</span>
+            <span className="font-sans font-semibold text-foreground text-sm sm:text-base">Raisya's Portofolio</span>
           </button>
 
           <nav className="hidden items-center gap-2 lg:flex">
@@ -53,10 +53,10 @@ export function Navbar() {
                 type="button"
                 onClick={() => goTo(item.id)}
                 className={cn(
-                  'rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200 cursor-pointer active:scale-95',
+                  'rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 cursor-pointer active:scale-95',
                   active === item.id
-                    ? 'border-foreground bg-foreground text-background shadow-xs'
-                    : 'border-border/80 bg-background/90 text-foreground/80 backdrop-blur-md hover:border-foreground hover:bg-foreground hover:text-background'
+                    ? 'bg-foreground text-background shadow-xs font-semibold'
+                    : 'text-muted-foreground hover:bg-muted/60 hover:text-foreground'
                 )}
               >
                 {item.label}
@@ -67,7 +67,7 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className="rounded-full border border-border/80 bg-background/90 backdrop-blur-md lg:hidden cursor-pointer hover:border-foreground"
+            className="rounded-full border border-border/60 bg-background/80 backdrop-blur-md lg:hidden cursor-pointer hover:border-foreground"
             aria-label="Open menu"
             onClick={() => setMobileOpen(true)}
           >

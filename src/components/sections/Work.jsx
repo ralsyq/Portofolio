@@ -24,14 +24,6 @@ export function Work({ onOpenArticle }) {
   const smoothX = useSpring(rawX, { stiffness: 600, damping: 35, mass: 0.1 });
   const smoothY = useSpring(rawY, { stiffness: 600, damping: 35, mass: 0.1 });
 
-  const categoryCounts = {
-    All: projects.length,
-    'iOS Apps': projects.filter((p) => p.category === 'iOS Apps' || (p.category || '').toLowerCase().includes('ios')).length,
-    'Web Apps': projects.filter((p) => p.category === 'Web Apps' || (p.category || '').toLowerCase().includes('web')).length,
-    'UI/UX Prototype': projects.filter((p) => p.category === 'UI/UX Prototype' || (p.category || '').toLowerCase().includes('ui')).length,
-    'Data Analysis': projects.filter((p) => p.category === 'Data Analysis' || (p.category || '').toLowerCase().includes('data')).length,
-  };
-
   const filteredProjects = selectedCategory === 'All'
     ? projects
     : projects.filter((p) => {
@@ -159,10 +151,9 @@ export function Work({ onOpenArticle }) {
             className="text-4xl font-normal tracking-tight text-foreground uppercase sm:text-5xl"
           />
 
-          <div className="mt-6 flex flex-wrap items-center gap-2 sm:gap-2.5">
+          <div className="mt-6 flex flex-wrap items-center gap-2 sm:gap-3">
             {CATEGORIES.map((cat) => {
               const isSelected = selectedCategory === cat;
-              const count = categoryCounts[cat] ?? 0;
               return (
                 <button
                   key={cat}
@@ -175,24 +166,19 @@ export function Work({ onOpenArticle }) {
                     }
                     setSelectedCategory(cat);
                   }}
-                  className={cn(
-                    'group inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer active:scale-95',
+                  style={
                     isSelected
-                      ? 'border-foreground bg-foreground text-background shadow-xs'
-                      : 'border-border/80 bg-background/90 text-muted-foreground hover:border-foreground hover:text-foreground hover:bg-muted/40'
+                      ? { backgroundColor: '#111827', color: '#ffffff', borderColor: '#111827' }
+                      : { backgroundColor: '#ffffff', color: '#4b5563', borderColor: '#e5e7eb' }
+                  }
+                  className={cn(
+                    'inline-flex items-center rounded-full border px-4 py-2 text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer active:scale-95 shadow-xs',
+                    isSelected
+                      ? 'font-semibold shadow-sm'
+                      : 'hover:border-neutral-900 hover:text-neutral-900 hover:bg-neutral-50'
                   )}
                 >
-                  <span>{cat}</span>
-                  <span
-                    className={cn(
-                      'inline-flex items-center justify-center rounded-full px-2 py-0.5 text-[10px] font-semibold transition-colors',
-                      isSelected
-                        ? 'bg-background/20 text-background'
-                        : 'bg-muted text-muted-foreground group-hover:bg-foreground/10 group-hover:text-foreground'
-                    )}
-                  >
-                    {count}
-                  </span>
+                  {cat}
                 </button>
               );
             })}
