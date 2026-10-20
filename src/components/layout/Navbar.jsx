@@ -35,7 +35,7 @@ export function Navbar() {
 
   return (
     <>
-      <header ref={headerRef} className="fixed top-0 left-0 z-50 w-full border-b border-border/40 bg-background/85 backdrop-blur-md transition-all">
+      <header ref={headerRef} className="fixed top-0 left-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur-md transition-all">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6 lg:px-8">
           <button
             type="button"
